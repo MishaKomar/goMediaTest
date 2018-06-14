@@ -9,19 +9,15 @@ header {
     justify-content: space-between;
 
     .button {
+        width: 25px;
+        height: 25px;
+        margin: 0.5rem;
+        cursor: pointer;
         &--back {
-            width: 35px;
-            height: 35px;
-            margin: 0.5rem;
-            cursor: pointer;
             background: no-repeat center url('../assets/Icons/ic_back.png');
             background-size: contain;
         }
         &--menu {
-            width: 35px;
-            height: 35px;
-            margin: 0.5rem;
-            cursor: pointer;            
             background: no-repeat center url('../assets/Icons/ic_burger.png');
             background-size: contain;            
         }
@@ -48,15 +44,13 @@ footer {
 }
 
 .image {
+    width: 395px;
+    height: 52px;
     &--header {
-        width: 395px;
-        height: 52px;
         background: no-repeat url('../assets/Icons/logo_header.png');
         background-size: contain;
     }
     &--footer {
-        width: 395px;
-        height: 52px;
         background: no-repeat center url('../assets/Icons/logo_footer.png');
     }
 }

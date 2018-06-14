@@ -6,13 +6,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MenuSideComponent } from './menu-side/menu-side.component';
 import { FilmsListComponent } from './films-list/films-list.component';
+import { FilmDetailsComponent } from './film-details/film-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuSideComponent,
-    FilmsListComponent
+    FilmsListComponent,
+    FilmDetailsComponent
   ],
   imports: [
     BrowserModule,
