@@ -1,10 +1,10 @@
 <div class="film__list">
-    <div class="film__item" *ngFor="let film of films">
+    <div class="film__item" *ngFor="let film of filmsProviderService.films" (click)="open(film)">
         <div class="poster" [style.background-image]="'url(' + film.posterUrl + ')'"></div>
         <div class="description">
         <div class="name" clamp="2">{{film.name}}</div>
         <div class="info">
-            <span>{{film.episodes}} Episodes</span>
+            <span>{{film.episodes.length}} Episodes</span>
             <span>{{film.category}}</span>
             <span>{{film.year}}</span>
         </div>
@@ -15,5 +15,11 @@
         <div class="to-top__button"></div>
         <span>Back to top</span>
         </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal" [style.display]="modalService.isShowed() ? 'block': 'none'">
+    <div class="modal-content" *ngIf="selectedFilm">
+        <app-film-details [film]="selectedFilm"></app-film-details>
     </div>
 </div>

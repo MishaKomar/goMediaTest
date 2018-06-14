@@ -1,94 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ModalService } from '../services/modal.service';
+import { FilmsProviderService } from '../services/films-provider.service';
+import { IFilm } from '../models/film';
 
 @Component({
   selector: 'app-films-list',
   templateUrl: './films-list.component.html',
   styleUrls: ['./films-list.component.scss']
 })
-export class FilmsListComponent implements OnInit {
+export class FilmsListComponent {
 
-    films = [
-        {
-          name: 'Alan Partridge Mid Morning Matters',
-          episodes: 6,
-          category: '15',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_01.png',
-        },
-        {
-          name: 'Camping',
-          episodes: 8,
-          category: 'PG',
-          year: 2010,
-          posterUrl: '../assets/Shows/img_tv_02.png',
-        },
-        {
-          name: 'Doll & Em',
-          episodes: 6,
-          category: '15',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_03.png',
-        },
-        {
-          name: 'Fleming',
-          episodes: 6,
-          category: '15',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_04.png',
-        },
-        {
-          name: 'Guitar Star',
-          episodes: 6,
-          category: 'PG',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_05.png',
-        },
-        {
-          name: 'Alan Partridge Mid Morning Matters',
-          episodes: 6,
-          category: '15',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_06.png',
-        },
-        {
-          name: 'Alan Partridge Mid Morning Matters',
-          episodes: 6,
-          category: '15',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_07.png',
-        },
-        {
-          name: 'The Nightmare Worlds of HG Wells',
-          episodes: 6,
-          category: '15',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_08.png',
-        },
-        {
-          name: 'The Tunnel',
-          episodes: 4,
-          category: '15',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_09.png',
-        },
-        {
-          name: 'The Southbank Show',
-          episodes: 6,
-          category: 'PG',
-          year: 2015,
-          posterUrl: '../assets/Shows/img_tv_10.png',
-        },
-    ];
+    isModal:boolean = false;
+    selectedFilm: IFilm;
 
-    constructor() {
-
+    constructor(
+        public modalService: ModalService,
+        public filmsProviderService: FilmsProviderService
+        ) {
     }
 
-    ngOnInit () {
-
+    open(film: IFilm) {
+        this.selectedFilm = film;
+        this.modalService.switchModal();
     }
 
-    
     goTop() {
         let scrollToTop = window.setInterval(() => {
             let pos = window.pageYOffset;

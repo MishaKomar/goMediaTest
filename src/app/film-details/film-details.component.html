@@ -1,6 +1,6 @@
 <div class="film-poster" [style.background-image]="'url(' + film.coverUrl + ')'">
     <div class="header__container">
-        <div class="button--close"></div>
+        <div class="button--close" (click)="modalService.switchModal()"></div>
     </div>
     <div class="info__container">
         <div class="name">{{film.name}}</div>
@@ -16,6 +16,36 @@
         "Fleming" this is unarguably a piece of fiction with a few bits of truth. "The Man Who Never Was" featured in this program is Non Fiction by author Ewen Montagu.
     </div>
     <div class="episodes-list">
+        <div class="episode-item" *ngFor="let episode of film.episodes">
+            <div class="episode-image" [style.background-image]="'url(' + episode.imageUrl + ')'">
+                <div class="button--play"></div>
+            </div>
+            <div class="episode-details">
+                <div class="name">{{episode.name}}</div>
+                <div class="details">
+                    <span>{{episode.details}}</span>
+                    <span>{{episode.time}} min</span>
+                </div>
+            </div>
+            <div class="more__container">
+                <div class="button--more"></div>
+            </div>
+        </div>
+        <div class="episode-item" *ngFor="let episode of film.episodes">
+            <div class="episode-image" [style.background-image]="'url(' + episode.imageUrl + ')'">
+                <div class="button--play"></div>
+            </div>
+            <div class="episode-details">
+                <div class="name">{{episode.name}}</div>
+                <div class="details">
+                    <span>{{episode.details}}</span>
+                    <span>{{episode.time}} min</span>
+                </div>
+            </div>
+            <div class="more__container">
+                <div class="button--more"></div>
+            </div>
+        </div>
         <div class="episode-item" *ngFor="let episode of film.episodes">
             <div class="episode-image" [style.background-image]="'url(' + episode.imageUrl + ')'">
                 <div class="button--play"></div>
