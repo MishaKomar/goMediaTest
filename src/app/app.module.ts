@@ -9,8 +9,8 @@ import { FilmsListComponent } from './films-list/films-list.component';
 import { FilmDetailsComponent } from './film-details/film-details.component';
 
 import { ModalService } from './services/modal.service';
+import { MenuSideService } from './services/menu-side.service';
 import { FilmsProviderService } from './services/films-provider.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +24,7 @@ import { FilmsProviderService } from './services/films-provider.service';
   ],
   providers: [
     ModalService,
+    MenuSideService,
     FilmsProviderService
   ],
   bootstrap: [AppComponent]

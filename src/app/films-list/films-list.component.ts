@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ModalService } from '../services/modal.service';
 import { FilmsProviderService } from '../services/films-provider.service';
 import { IFilm } from '../models/film';
+import { MenuSideService } from '../services/menu-side.service';
 
 @Component({
   selector: 'app-films-list',
@@ -15,12 +16,16 @@ export class FilmsListComponent {
 
     constructor(
         public modalService: ModalService,
-        public filmsProviderService: FilmsProviderService
+        public filmsProviderService: FilmsProviderService,
+        public menuSideService: MenuSideService
         ) {
     }
 
     open(film: IFilm) {
         this.selectedFilm = film;
+        if (this.menuSideService.isOpen()) {
+            this.menuSideService.toggleMenu();
+        }
         this.modalService.switchModal();
     }
 

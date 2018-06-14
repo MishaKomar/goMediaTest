@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { MenuSideService } from './services/menu-side.service';
 
 @Component({
   selector: 'app-root',
@@ -19,14 +20,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class AppComponent {
-  menuState = 'out';
 
-  constructor() {
+  constructor(public menuSideService: MenuSideService) {
     
   }
 
-  toggleMenu() {
-    // 1-line if statement that toggles the value:
-    this.menuState = this.menuState === 'out' ? 'in' : 'out';
-  }
 }

@@ -2,7 +2,7 @@
   <header>
     <div class="button button--back"></div>
     <div class="image image--header"></div>    
-    <div class="button button--menu" (click)="toggleMenu()"></div>
+    <div class="button button--menu" (click)="menuSideService.toggleMenu()"></div>
   </header>
   <div class="subheader">TV</div>
   <main>
@@ -13,4 +13,4 @@
     <div class="image image--footer"></div>
   </footer>
 </div>
-<app-menu-side [@slideInOut]="menuState" (onToogle)="toggleMenu()"></app-menu-side>
+<app-menu-side [@slideInOut]="menuSideService.menuState" (onToogle)="menuSideService.toggleMenu()"></app-menu-side>
