@@ -1,0 +1,42 @@
+:host {
+    position: fixed;
+    left: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 25%;
+    min-width: 325px;
+    background-color: #FFFFFF;	
+    box-shadow: 0 0 18px 0 rgba(236,236,249,0.74);
+    z-index: 9999;
+  }
+  .header {
+    display: flex;
+    padding: 10px 25px 0 25px;
+    .button--close {
+      
+      height: 15px;	
+      width: 15px;	
+      cursor: pointer;
+      margin: 0.5rem;
+      background: no-repeat center url('../../assets/Icons/ic_close-black.png');
+      background-size: contain;
+    }
+    .title-container {
+      flex-basis: 90%;
+      text-align: center;
+      margin: auto;
+      span {
+        height: 26px;	
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 22px;
+      }
+    }
+}
+  
+@media all and (max-width: 687px) {
+  :host {
+    width: 100%;
+  }
+}

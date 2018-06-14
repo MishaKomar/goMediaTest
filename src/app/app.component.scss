@@ -6,7 +6,26 @@ header {
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+
+    .button {
+        &--back {
+            width: 35px;
+            height: 35px;
+            margin: 0.5rem;
+            cursor: pointer;
+            background: no-repeat center url('../assets/Icons/ic_back.png');
+            background-size: contain;
+        }
+        &--menu {
+            width: 35px;
+            height: 35px;
+            margin: 0.5rem;
+            cursor: pointer;            
+            background: no-repeat center url('../assets/Icons/ic_burger.png');
+            background-size: contain;            
+        }
+    }
 }
 
 footer {
@@ -39,45 +58,27 @@ footer {
         width: 395px;
         height: 52px;
         background: no-repeat center url('../assets/Icons/logo_footer.png');
-        // background-size: contain;
     }
 }
 
 .subheader {
     background-color: black;
     color: #efefef;
-    height: 1rem;
+    height: 2rem;
     text-align: center;
     padding: 0.5rem;
 }
-.content {
-    padding: 1rem 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    background: #efefef;
 
-    .film__container {
-        width: 400px;
-        height: 100px;
-        margin: 1rem;
-        background-color: white;
-        display: flex;
-        .poster {
-            height: 100%;
-            width: 18.36%;
-            background: no-repeat url('../assets/Shows/img_tv_01.png');
-            background-size: contain;
+
+@media all and (max-width: 687px) {
+    .image {
+        &--header {
+            background: no-repeat center url('../assets/Icons/logo_header-min.png');
         }
-        .description {
-            width: 81.64%;
-            padding: 1.5rem 1rem 1rem 1rem;
-
-            .name {
-
-            }
-            .info {
-
-            }
+        &--footer {
+            width: 220px;
+            height: 29px;
+            background: no-repeat center url('../assets/Icons/logo_footer-min.png');
         }
     }
 }

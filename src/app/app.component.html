@@ -1,54 +1,15 @@
 <header>
+  <div class="button--back"></div>
   <div class="image--header"></div>    
+  <div class="button--menu" (click)="toggleMenu()"></div>
 </header>
 <div class="subheader">TV</div>
-<div class="content">
-  <div class="film__container">
-    <div class="poster"></div>
-    <div class="description">
-      <div class="name">Alan Partridge Mid Morning Matters</div>
-      <div class="info">
-        <span>6 Episodes</span>
-        <span>15</span>
-        <span>2015</span>
-      </div>
-    </div>
-  </div>
-  <div class="film__container">
-      <div class="poster"></div>
-      <div class="description">
-        <div class="name">Alan Partridge Mid Morning Matters</div>
-        <div class="info">
-          <span>6 Episodes</span>
-          <span>15</span>
-          <span>2015</span>
-        </div>
-      </div>
-    </div>
-    <div class="film__container">
-        <div class="poster"></div>
-        <div class="description">
-          <div class="name">Alan Partridge Mid Morning Matters</div>
-          <div class="info">
-            <span>6 Episodes</span>
-            <span>15</span>
-            <span>2015</span>
-          </div>
-        </div>
-      </div>
-      <div class="film__container">
-          <div class="poster"></div>
-          <div class="description">
-            <div class="name">Alan Partridge Mid Morning Matters</div>
-            <div class="info">
-              <span>6 Episodes</span>
-              <span>15</span>
-              <span>2015</span>
-            </div>
-          </div>
-        </div>
-</div>
+<main>
+  <app-films-list></app-films-list>
+</main>
 <footer>
   <span>Powered by</span>
   <div class="image--footer"></div>
 </footer>
+<app-menu-side [@slideInOut]="menuState" (onToogle)="toggleMenu()"></app-menu-side>
+

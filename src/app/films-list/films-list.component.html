@@ -1,0 +1,19 @@
+<div class="film__list">
+    <div class="film__item" *ngFor="let film of films">
+        <div class="poster" [style.background-image]="'url(' + film.posterUrl + ')'"></div>
+        <div class="description">
+        <div class="name" clamp="2">{{film.name}}</div>
+        <div class="info">
+            <span>{{film.episodes}} Episodes</span>
+            <span>{{film.category}}</span>
+            <span>{{film.year}}</span>
+        </div>
+        </div>
+    </div>
+    <div class="to-top__container" (click)="goTop()">
+        <div class="to-top__button-container">
+        <div class="to-top__button"></div>
+        <span>Back to top</span>
+        </div>
+    </div>
+</div>
